@@ -1,0 +1,43 @@
+{% extends 'templates/base.html' %}
+{% block content %}
+<h1>Shows all finance</h1>
+<!-- we will want to select which finance we see ( income, debt, expense ) -->
+{% if user.is_anonymous %}
+
+<p>Yeah fuckin' right.</p>
+<p>Log in.</p>
+
+{% else %}
+
+<p><a href="{% url 'finance_create' %}">Add Financial Information</a></p>
+
+<h2>Income</h2>
+{% for income in object_list %}
+    {% if income.finance_type == 'I' %}
+        <p><a href="{% url 'finance_detail' income.slug %}">{{ income.name}}: ${{ income.amount }}</a></p>
+        <p><a href="{% url 'finance_update' income.slug %}">Updatde</a></p>
+        <p><a href="{% url 'finance_delete' income.slug %}">Delete</a></p>
+    {% endif %}
+{% endfor %}
+
+<h2>Debt</h2>
+{% for debt in object_list %}
+    {% if debt.finance_type == 'D' %}
+        <p><a href="{% url 'finance_detail' debt.slug %}">{{ debt.name }}: ${{ debt.amount }}</a></p>
+        <p><a href="{% url 'finance_update' debt.slug %}">Updatde</a></p>
+        <p><a href="">Delete</a></p>
+    {% endif %}
+{% endfor %}
+
+<h2>Expenses</h2>
+{% for expense in object_list %}
+    {% if expense.finance_type == 'E' %}
+        <p><a href="{% url 'finance_detail' expense.slug %}">{{ expense.name }}: ${{ expense.amount }}</a></p>
+        <p><a href="{% url 'finance_update' expense.slug %}">Updatde</a></p>
+        <p><a href="">Delete</a></p>
+    {% endif %}
+{% endfor %}
+
+<!-- Close if user.is_anon -->
+{% endif %}
+{% endblock %}

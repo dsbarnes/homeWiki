@@ -1,0 +1,14 @@
+{% extends 'templates/base.html' %}
+{% block content %}
+<h1>Welcome to our home recipes!</h1>
+<p>Add a new recipe <a href="{% url 'recipe_add' %}">here.</a></p>
+
+{% for recipe in object_list %}
+    <p><a href="{% url 'recipe_detail' recipe.slug %}">{{ recipe.name }}</a></p>
+    <p>Time to cook: {{ recipe.time }}</p>
+    <p>Ingredients: {{ recipe.ingredients }}</p>
+    <p>Directions: {{ recipe.directions }}</p>
+    <a href="{% url 'recipe_update' recipe.slug %}">Edit</a>
+    <a href="{% url 'recipe_delete' recipe.slug %}">Delete</a>
+{% endfor %}
+{% endblock %}

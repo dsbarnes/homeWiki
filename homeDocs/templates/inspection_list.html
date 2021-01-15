@@ -1,0 +1,22 @@
+{% extends 'templates/base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>Welcome to the most recent inspection</h1>
+<p>And the older ones too</p>
+<a href="{% url 'doc_create' %}">Add an inspection item</a>
+
+{% for inspection in object_list %}
+    {% if inspection.doc_type == 'I' %}
+    <hr>
+    <p>{{ inspection.name }} - {{ inspection.doc_type }}</p>
+    <p>Name of the file: <a href="{% url 'pdf' %}">{{ inspection.img }}</a></p>
+    <p><a href="{% static 'test.pdf' %}">TRY ME</a></p>
+    <p>Details: {{ inspection.details }}</p>
+
+    <a href="{% url 'doc_update' inspection.slug %}">Edit</a>
+    <a href="{% url 'doc_delete' inspection.slug %}">Delete</a>
+    {% endif %}
+{% endfor %}
+
+{% endblock %}

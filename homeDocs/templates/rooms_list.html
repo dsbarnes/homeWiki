@@ -1,0 +1,17 @@
+{% extends 'templates/base.html' %}
+{% block content %}
+<h1>Welcome to rooms</h1>
+<a href="{% url 'doc_create' %}">Add room information</a>
+
+{% for room in object_list %}
+    {% if room.doc_type == 'R' %}
+    <p>{{ room.name }} - {{ room.doc_type }}</p>
+    <p>{{ room.img }}</p>
+    <p>{{ room.details }}</p>
+
+    <a href="{% url 'doc_update' room.slug %}">Edit</a>
+    <a href="{% url 'doc_delete' room.slug %}">Delete</a>
+    {% endif %}
+
+{% endfor %}
+{% endblock %}

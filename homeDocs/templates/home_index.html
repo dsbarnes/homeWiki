@@ -1,0 +1,14 @@
+{% extends 'templates/base.html' %}
+{% block content %}
+<h1>Welcom to Home Docs</h1>
+{% if user.is_anonymous %}
+<p>You'll need to log in to see any of this.</p>
+{% else %}
+<ul>
+    <li><a href="{% url 'inspection' %}">Most recent home inspection details</a></li>
+    <li><a href="{% url 'purchase' %}">Purchase Details (Insurance, Mortgage, 'red folder')</a></li>
+    <li><a href="{% url 'rooms' %}">General information about the rooms and the things in them</a></li>
+</ul>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'templates/base.html' %}
+{% block content %}
+<h1>Storage Access:</h1>
+{% if user.is_anonymous %}
+    <p>Log yo' ass in foo.</p>
+{% else %}
+    <p>Here be instructions to access the storage.</p>
+{% endif %}
+{% endblock %}

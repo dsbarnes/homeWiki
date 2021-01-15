@@ -1,0 +1,21 @@
+{% extends 'templates/base.html' %}
+{% block content %}
+
+<h1>Financial Detail:</h1>
+
+<p>{{ object.name }}: ${{ object.amount }}</p>
+<p>{{ object.date }}</p>
+
+<p>Is type:</p>
+{% if object.finance_type == 'D' %}
+    <p>Debt</p>
+{% elif object.finance_type == 'E' %}
+    <p>Expense</p>
+{% else %}
+    <p>Income</p>
+{% endif %}
+
+<hr>
+<p>The slug for this item is: {{ object.slug }}</p>
+
+{% endblock %}

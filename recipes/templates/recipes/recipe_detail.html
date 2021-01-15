@@ -1,0 +1,8 @@
+{% extends 'templates/base.html' %}
+{% block content %}
+<h2>Recipe Detail</h2>
+<p>NAME: {{ object.name }}</p>
+<p>INGREDIENTS: {{ object.ingredients }}</p>
+<p>DIRECTIONS: {{ object.directions }}</p>
+<p>TIME: {{ object.time }}</p>
+{% endblock %}
