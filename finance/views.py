@@ -9,7 +9,8 @@ from datetime import datetime
 
 
 class FinanceListView(LoginRequiredMixin, ListView):
-    model = Finance 
+    model = Finance
+    login_url = 'login'
 
 class FinanceDetailView(LoginRequiredMixin, DetailView):
     model = Finance

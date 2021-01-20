@@ -2,10 +2,6 @@
 {% block content %}
 
 <h1>Welcome to the Barnes Hidden Wiki</h1>
-<p>
-    In order to view the finances, home inspections or purchase docs,
-    or storage instructions, log in.
-</p>
 
 <ul>
     <li><a href="{% url 'finance_list' %}">Finance</a></li>
@@ -13,4 +9,5 @@
     <li><a href="{% url 'home_index' %}">Home Docs</a></li>
     <li><a href="{% url 'recipe_list' %}">Recipes</a></li>
 </ul>
+
 {% endblock %}
