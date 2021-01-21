@@ -1,0 +1,16 @@
+{% extends 'templates/base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>Grocery</h1>
+<p>
+    A technical analysis of what we buy when <br/>
+    and predictions about when we'll buy it again.
+</p>
+
+<p><a href="{% url 'grocery_create' %}">Add a grocery item.</a></p>
+
+{% for item in object_list %}
+{% endfor %}
+
+{% endblock %}

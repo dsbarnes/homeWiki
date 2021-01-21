@@ -2,9 +2,10 @@ from django.db import models
 from django.template.defaultfilters import slugify
 from datetime import datetime
 
+
 class Finance(models.Model):
     name = models.CharField(max_length=255)
-    amount = models.IntegerField()
+    amount = models.DecimalField(max_digits=8, decimal_places=2)
     date = models.DateField()
     slug = models.SlugField(unique=True, null=False)
 

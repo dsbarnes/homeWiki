@@ -2,13 +2,6 @@
 {% block content %}
 <h1>Shows all finance</h1>
 <!-- we will want to select which finance we see ( income, debt, expense ) -->
-{% if user.is_anonymous %}
-
-<p>Yeah fuckin' right.</p>
-<p>Log in.</p>
-
-{% else %}
-
 <p><a href="{% url 'finance_create' %}">Add Financial Information</a></p>
 
 <h2>Income</h2>
@@ -47,6 +40,4 @@
     {% endif %}
 {% endfor %}
 
-<!-- Close if user.is_anon -->
-{% endif %}
 {% endblock %}
