@@ -8,10 +8,24 @@
 
     <p><a href="{% url 'recipe_detail' recipe.slug %}">{{ recipe.name }}</a></p>
     <p>Time to cook: {{ recipe.time }}</p>
-    <p>Ingredients: {{ recipe.ingredients }}</p>
+    <div>
+        <p>Ingredients:</p>
+        {% for recipe_name, ingredients in ingredient_list.items %}
+        {% if recipe_name == recipe.slug %}
+            <ul>
+            {% for ingredient in ingredients %}
+                <li>{{ ingredient }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endfor %}
+    </div>
+
     <p>Directions: {{ recipe.directions }}</p>
     <a href="{% url 'recipe_update' recipe.slug %}">Edit</a>
     <a href="{% url 'recipe_delete' recipe.slug %}">Delete</a>
 
 {% endfor %}
+
+
 {% endblock %}
