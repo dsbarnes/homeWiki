@@ -11,6 +11,7 @@
 <p><a href="{% url 'grocery_create' %}">Add a grocery item.</a></p>
 
 {% for item in object_list %}
+    <p> <a href="{% url 'grocery_detail' item.slug %}"> {{ item.quantity}} - {{ item.name }} @ {{ item.cost }} </a> </p>
 {% endfor %}
 
 {% endblock %}
