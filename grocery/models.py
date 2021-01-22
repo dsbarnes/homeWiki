@@ -20,7 +20,7 @@ class Recipt(models.Model):
 class Grocery(models.Model):
     name = models.CharField(max_length=255)
     quantity = models.IntegerField()
-    cost = models.IntegerField()
+    cost = models.DecimalField(max_digits=8, decimal_places=2)
     date = models.DateField()
     slug = models.SlugField()
 

@@ -14,6 +14,7 @@ class RecipeUpdateView(UpdateView):
     model = Recipe
     template_name_suffix = '_update_form'
     fields = ['name', 'time', 'ingredients', 'directions']
+
     def get_success_url(self):
         return reverse('recipe_list')
 
