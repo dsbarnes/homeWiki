@@ -1,17 +1,26 @@
 {% extends 'templates/base.html' %}
 {% block content %}
-<h1>The Red Folder</h1>
-<a href="{% url 'doc_create' %}">Add purchase document</a>
 
+<div class='title-box'>
+    <h1>The Red Folder</h1>
+    <p> <a href="{% url 'doc_create' %}">Add purchase document</a> </p>
+</div>
+
+<div class='purchase-card'>
 {% for purchase in object_list %}
     {% if purchase.doc_type == 'P' %}
-    <p>{{ purchase.name }} - {{ purchase.doc_type }}</p>
-    <p>{{ purchase.img }}</p>
-    <p>{{ purchase.details }}</p>
+    <h2>{{ purchase.name | title }} </h2>
+    <p>File: <br> <a href="">{{ purchase.img }} </a></p>
+    <p>
+        <span class='bold-text'>Description:</span><br>
+        {{ purchase.details }}
+    </p>
 
-    <a href="{% url 'doc_update' purchase.slug %}">Edit</a>
-    <a href="{% url 'doc_delete' purchase.slug %}">Delete</a>
+    <div class="update-delete-buttons">
+        <a href="{% url 'doc_update' purchase.slug %}">Edit</a>
+        <a href="{% url 'doc_delete' purchase.slug %}">Delete</a>
+    </div>
     {% endif %}
-
 {% endfor %}
+</div>
 {% endblock %}

@@ -1,22 +1,29 @@
 {% extends 'templates/base.html' %}
-{% load static %}
 {% block content %}
 
-<h1>Welcome to the most recent inspection</h1>
-<p>And the older ones too</p>
-<a href="{% url 'doc_create' %}">Add an inspection item</a>
+<div class="title-box">
+    <h1>Inspection(s)</h1>
+    <p>Currently one inspection, from the purchase. </p>
+    <p><a href="{% url 'doc_create' %}">Add an inspection item</a></p>
+</div>
 
+
+<div class="inspection-card">
 {% for inspection in object_list %}
     {% if inspection.doc_type == 'I' %}
-    <hr>
-    <p>{{ inspection.name }} - {{ inspection.doc_type }}</p>
-    <p>Name of the file: <a href="{% url 'pdf' %}">{{ inspection.img }}</a></p>
-    <p><a href="{% static 'test.pdf' %}">TRY ME</a></p>
-    <p>Details: {{ inspection.details }}</p>
+    <h2> {{ inspection.name | title }} </h2>
+    <p>File: <br> <a href="">{{ inspection.img }}</a></p>
+    <p>
+        <span class='bold-text'> Details: </span> <br>
+        {{ inspection.details }}
+    </p>
 
-    <a href="{% url 'doc_update' inspection.slug %}">Edit</a>
-    <a href="{% url 'doc_delete' inspection.slug %}">Delete</a>
+    <div class="update-delete-buttons">
+        <a href="{% url 'doc_update' inspection.slug %}">Edit</a>
+        <a href="{% url 'doc_delete' inspection.slug %}">Delete</a>
+    </div>
     {% endif %}
 {% endfor %}
+</div>  
 
 {% endblock %}

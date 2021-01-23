@@ -1,52 +1,59 @@
-*{ 
-    box-sizing: border-box; 
-    font-family: Arial, Helvetica, sans-serif;
-}
-.bold-text{
-    font-weight: bolder;
-}
+*{ box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+body{ display: flex; justify-content: center; background-color: slategrey; }
+main{ width: 800px; }
+h1, h2{ color: steelblue; margin: 20px; padding: 10px; }
+ul{ list-style: none; }
+p{ margin: 20px; padding: 10px; }
+a{ text-decoration: none; color: purple; }
 
-body{
-    display: flex;
-    justify-content: center;
-    background-color: slategrey;
-}
 
-aside, form, .title-box, .card, 
-.recipe-card, .recipe-detail-box,
-.storage-box,
-.finance-card, .finance-detail-box,
-.grocery-card {
-    background-color: whitesmoke;
-    border: 1px solid black;
-    margin: 20px;
-}
-
+/*                      */
+/*  Style for Sidebar   */
+/*                      */
 .sidebar{ width: 200px; height: 600px; }
 .sidebar a:link{ text-decoration: none; color: steelblue; }
 .sidebar a:visited{ color: steelblue; }
 .sidebar a:hover{ color: purple; }
 .sidebar a:active{ color: purple; }
 
-main{
-    width: 800px;
-}
 
-h1, h2{
-    color: steelblue;
+/*                                  */
+/*   basic style for all the cards  */
+/*                                  */
+aside, form, .title-box, .card, 
+.recipe-card, .recipe-detail-box,
+.storage-box,
+.finance-card, .finance-detail-box,
+.grocery-card, 
+.inspection-card, .purchase-card, .room-card{
+    background-color: whitesmoke;
+    border: 1px solid black;
     margin: 20px;
+}
+
+
+/* Custom bold text */
+.bold-text{ font-weight: bolder; }
+
+/*                      */
+/*   List View Buttons  */
+/*                      */
+.update-delete-buttons a{
+    display: inline-block;
+    width: 120px;
     padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    background-color: silver;
+    border: 1px solid black;
+    margin: 0 0 30px 30px;
 }
 
-ul{
-    list-style: none;
-}
 
-p{
-    margin: 20px;
-    padding: 10px;
-}
-
+/*                  */
+/*    CRUD Forms    */
+/*                  */
 form{
     display: flex;
     flex-direction: column;
@@ -68,7 +75,6 @@ form input[type=submit]{
 }
 
 
-
 /*                             */
 /*    Stylesheet for RECIPES   */
 /*                             */
@@ -80,9 +86,6 @@ form input[type=submit]{
 .recipe-card a:link{ color: steelblue; }
 .recipe-card a:visited{ color: steelblue; }
 .recipe-card a:hover{ color: purple; }
-
-.edit-delete-buttons{ margin: 20px 20px 40px 20px; }
-.edit-delete-buttons a{ margin-right: 10px; } 
 
 
 /*                            */
@@ -111,3 +114,12 @@ form input[type=submit]{
 .grocery-card p{
     width: 140px;
 }
+
+
+/*                            */
+/*   Styleshee for HomeDocs   */
+/*                            */
+.inspection-card{
+
+}
+

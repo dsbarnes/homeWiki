@@ -1,17 +1,32 @@
 {% extends 'templates/base.html' %}
 {% block content %}
-<h1>Welcome to rooms</h1>
-<a href="{% url 'doc_create' %}">Add room information</a>
+
+<div class="title-box">
+    <h1>Welcome to rooms</h1>
+    <p>Here is general information about furnature, appliances, repairs, windows, dents,
+        dings, and all sorts of things. If it's in a room. If you see it, I probably know
+        exactly where I got it, for how much, and when.
+    </p>
+    <p> <a href="{% url 'doc_create' %}">Add room information</a> </p>
+</div>
+
+<div class="room-card">
 
 {% for room in object_list %}
     {% if room.doc_type == 'R' %}
-    <p>{{ room.name }} - {{ room.doc_type }}</p>
-    <p>{{ room.img }}</p>
-    <p>{{ room.details }}</p>
+    <h2>{{ room.name | title}}</h2>
+    <p>File: <br> <a href="">{{ room.img }}</a></p>
+    <p>
+        <span class='bold-text'> Description: </span> <br>
+        {{ room.details }}
+    </p>
 
-    <a href="{% url 'doc_update' room.slug %}">Edit</a>
-    <a href="{% url 'doc_delete' room.slug %}">Delete</a>
+    <div class="update-delete-buttons">
+        <a href="{% url 'doc_update' room.slug %}">Edit</a>
+        <a href="{% url 'doc_delete' room.slug %}">Delete</a>
+    </div>
     {% endif %}
 
 {% endfor %}
+</div>
 {% endblock %}

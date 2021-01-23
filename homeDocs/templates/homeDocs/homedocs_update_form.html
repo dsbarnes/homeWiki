@@ -1,6 +1,10 @@
 {% extends 'templates/base.html' %}
 {% block content %}
-<h1>Editing document:</h1>
+
+<div class="title-box">
+    <h1>Editing document:</h1>
+</div>
+
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}

@@ -1,8 +1,11 @@
 {% extends 'templates/base.html' %}
 {% block content %}
-<h1>Welcom to Home Docs</h1>
-{% if user.is_anonymous %}
-<p>You'll need to log in to see any of this.</p>
+
+<div class='title-box'>
+    <h1>Welcom to Home Docs</h1>
+    {% if user.is_anonymous %}
+    <p>You'll need to log in to see any of this.</p>
+</div>
 {% else %}
 <ul>
     <li><a href="{% url 'inspection' %}">Most recent home inspection details</a></li>

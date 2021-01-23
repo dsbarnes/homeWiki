@@ -12,7 +12,7 @@
 {% for recipe in object_list %}
 <div class='recipe-card'>
     
-    <h2><a href="{% url 'recipe_detail' recipe.slug %}">{{ recipe.name }}</a></h2>
+    <h2><a href="{% url 'recipe_detail' recipe.slug %}">{{ recipe.name | title }}</a></h2>
     
     <p class='bold-text'>
         Time to cook: 
@@ -34,8 +34,9 @@
     
     <p class='bold-text'>Directions:</p>
     <p>{{ recipe.directions }}</p>
+    <br>
 
-    <div class='edit-delete-buttons'>
+    <div class='update-delete-buttons'>
         <a href="{% url 'recipe_update' recipe.slug %}">Edit</a>
         <a href="{% url 'recipe_delete' recipe.slug %}">Delete</a>
     </div>
