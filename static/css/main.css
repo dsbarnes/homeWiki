@@ -12,8 +12,9 @@ body{
     background-color: slategrey;
 }
 
-aside, .title-box, .card, 
-.recipe-card, .recipe-detail-box{
+aside, form, .title-box, .card, 
+.recipe-card, .recipe-detail-box,
+.storage-box{
     background-color: whitesmoke;
     border: 1px solid black;
     margin: 20px;
@@ -47,16 +48,26 @@ p{
 
 
 /* This all applies site wide */
-.create-form p {
+form{
     display: flex;
     flex-direction: column;
+}
+form p {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 0 20px;
  }
- .create-form input[type=submit]{
+form p input {
+    height: 25px;
+    width: 420px;
+}
+form input[type=submit]{
      margin: 30px;
-     height: 40px;
-     font-size: 24px;
-     background-color: whitesmoke;
- }
+     height: 35px;
+     font-size: 14px;
+     width: 210px;
+}
+
 
 .edit-delete-buttons{ margin: 20px 20px 40px 20px; }
 .edit-delete-buttons a{ margin-right: 10px; } 

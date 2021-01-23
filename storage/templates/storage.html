@@ -1,9 +1,19 @@
 {% extends 'templates/base.html' %}
 {% block content %}
-<h1>Storage Access:</h1>
-{% if user.is_anonymous %}
-    <p>Log yo' ass in foo.</p>
-{% else %}
-    <p>Here be instructions to access the storage.</p>
+<div class="title-box">
+    <h1>Storage Access:</h1>
+    {% if user.is_anonymous %} <p>Log yo' ass in foo.</p> {% else %}
+</div>
+
+<div class='storage-box'>
+    <p>
+        <span class="bold-text">Access instructions:</span> <br>
+        <br>
+        TODO: <br>
+        Set up home storage. <br>
+        Write access instructions <br>
+    </p>
+
+</div>
 {% endif %}
 {% endblock %}
