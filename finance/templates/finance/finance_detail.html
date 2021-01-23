@@ -1,21 +1,19 @@
 {% extends 'templates/base.html' %}
 {% block content %}
 
-<h1>Financial Detail:</h1>
+<div class="title-box">
+    <h1>Financial Detail:</h1>
+</div>
 
-<p>{{ object.name }}: ${{ object.amount }}</p>
-<p>{{ object.date }}</p>
+<div class='finance-detail-box'>
+    <h2> Not actually sure what to do with this? </h2>
+    <p>{{ object.name }}: ${{ object.amount }} - {{ object.date }} -
 
-<p>Is type:</p>
-{% if object.finance_type == 'D' %}
-    <p>Debt</p>
-{% elif object.finance_type == 'E' %}
-    <p>Expense</p>
-{% else %}
-    <p>Income</p>
-{% endif %}
-
-<hr>
-<p>The slug for this item is: {{ object.slug }}</p>
-
+        Is type:
+        {% if object.finance_type == 'D' %} Debt
+        {% elif object.finance_type == 'E' %} Expense
+        {% else %} Income
+        {% endif %}
+    </p>
+</div>
 {% endblock %}

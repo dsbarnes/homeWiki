@@ -1,43 +1,59 @@
 {% extends 'templates/base.html' %}
 {% block content %}
-<h1>Shows all finance</h1>
-<!-- we will want to select which finance we see ( income, debt, expense ) -->
-<p><a href="{% url 'finance_create' %}">Add Financial Information</a></p>
 
+<div class="title-box">
+    <h1>Shows all finance</h1>
+    <!-- we will want to select which finance we see ( income, debt, expense ) -->
+    <p><a href="{% url 'finance_create' %}">Add Financial Information</a></p>
+</div>
+
+<div class="finance-card">
 <h2>Income</h2>
 {% for income in object_list %}
     {% if income.finance_type == 'I' %}
     <div>
-        <p ><a href="{% url 'finance_detail' income.slug %}">{{ income.name}}: ${{ income.amount }}</a></p>
-        <br>
-        <a href="{% url 'finance_update' income.slug %}">Updatde</a>
-        <a href="{% url 'finance_delete' income.slug %}">Delete</a>
+        <p><a href="{% url 'finance_detail' income.slug %}">{{ income.name}}: </a></p>
+        <p>${{ income.amount }}</p>
+        <p>{{ income.date }}</p>
+        <p> <a href="{% url 'finance_update' income.slug %}">Updatde</a></p>
+        <p> <a href="{% url 'finance_delete' income.slug %}">Delete</a></p>
     </div>
     {% endif %}
 {% endfor %}
+</div>
 
+
+<div class="finance-card">
 <h2>Debt</h2>
 {% for debt in object_list %}
     {% if debt.finance_type == 'D' %}
     <div>
-        <p><a class='finance_item' ref="{% url 'finance_detail' debt.slug %}">{{ debt.name }}: ${{ debt.amount }}</a></p>
-        <br>
-        <a href="{% url 'finance_update' debt.slug %}">Updatde</a>
-        <a href="">Delete</a>
+        <p><a href="{% url 'finance_detail' debt.slug %}">{{ debt.name }}:</a></p> 
+        <p>${{ debt.amount }}</p>
+        <p>{{ debt.date }}</p>
+
+        <p> <a href="{% url 'finance_update' debt.slug %}">Updatde</a> </p>
+        <p> <a href="{% url 'finance_delete' debt.slug %}">Delete</a> </p>
+
     </div>
     {% endif %}
 {% endfor %}
+</div>
 
+
+<div class="finance-card">
 <h2>Expenses</h2>
 {% for expense in object_list %}
     {% if expense.finance_type == 'E' %}
     <div>
-        <p><a class='finance_item' href="{% url 'finance_detail' expense.slug %}">{{ expense.name }}: ${{ expense.amount }}</a></p>
-        <br>
-        <a href="{% url 'finance_update' expense.slug %}">Updatde</a>
-        <a href="">Delete</a>
+        <p><a href="{% url 'finance_detail' expense.slug %}">{{ expense.name }}: </a></p>
+        <p>{{ expense.amount }}</p>
+        <p>{{ expense.date }}</p>
+        <p> <a href="{% url 'finance_update' expense.slug %}">Updatde</a> </p>
+        <p> <a href="{% url 'finance_delete' expense.slug %}">Delete</a> </p>
     </div>
     {% endif %}
 {% endfor %}
+</div>
 
 {% endblock %}

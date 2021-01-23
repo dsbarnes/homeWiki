@@ -1,7 +1,10 @@
 {% extends 'templates/base.html' %}
 {% block content %}
 
-<h1>DELETE?</h1>
+<div class="title-box">
+    <h1>Delete a finance item:</h1>
+    <p>Are you sure that this money is no longer relivant?</p>
+</div>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}

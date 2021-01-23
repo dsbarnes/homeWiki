@@ -14,14 +14,14 @@ body{
 
 aside, form, .title-box, .card, 
 .recipe-card, .recipe-detail-box,
-.storage-box{
+.storage-box,
+.finance-card, .finance-detail-box {
     background-color: whitesmoke;
     border: 1px solid black;
     margin: 20px;
 }
 
 .sidebar{ width: 200px; height: 600px; }
-
 .sidebar a:link{ text-decoration: none; color: steelblue; }
 .sidebar a:visited{ color: steelblue; }
 .sidebar a:hover{ color: purple; }
@@ -46,8 +46,6 @@ p{
     padding: 10px;
 }
 
-
-/* This all applies site wide */
 form{
     display: flex;
     flex-direction: column;
@@ -69,12 +67,10 @@ form input[type=submit]{
 }
 
 
-.edit-delete-buttons{ margin: 20px 20px 40px 20px; }
-.edit-delete-buttons a{ margin-right: 10px; } 
 
-
-/* We'll break this out into new files at some point */
-/* Stylesheet for RECIPES */
+/*                             */
+/*    Stylesheet for RECIPES   */
+/*                             */
 .recipe-card p{
     margin: 0 20px;
     padding: 5px;
@@ -84,3 +80,21 @@ form input[type=submit]{
 .recipe-card a:visited{ color: steelblue; }
 .recipe-card a:hover{ color: purple; }
 
+.edit-delete-buttons{ margin: 20px 20px 40px 20px; }
+.edit-delete-buttons a{ margin-right: 10px; } 
+
+
+/*                            */
+/*   Styleshee for FINANCE    */
+/*                            */
+.finance-card div{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.finance-card div:last-child{ margin-bottom: 30px; }
+.finance-card p {
+    margin: 0 0 5px 30px;
+    padding: 0px;
+    width: 100px;
+}
