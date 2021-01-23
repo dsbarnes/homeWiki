@@ -1,11 +1,16 @@
 {% extends 'templates/base.html' %}
 {% block content %}
 
-<h1>DELETE?</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Confirm Delete">
-</form>
+<div class="title-box">
+    <h1>You are about to delete: {{ object.name }}</h1>
+    <p>Are you sure you don't want to eat this, any more, ever again?</p>
+</div>
+<div class="create-form">
+    <form method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Confirm - Delete Recipe">
+    </form>
+</div>
 
 {% endblock %}

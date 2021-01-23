@@ -1,15 +1,26 @@
 {% extends 'templates/base.html' %}
 {% block content %}
-<h1>Welcome to our home recipes!</h1>
 
-<p>Add a new recipe <a href="{% url 'recipe_add' %}">here.</a></p>
+<!-- Box for the title -->
+<!-- Box for cards -->
+
+<div class='title-box'>
+    <h1>Our home recipes</h1>
+    <p>Add a new recipe <a href="{% url 'recipe_add' %}">here.</a></p>
+</div>
 
 {% for recipe in object_list %}
-
-    <p><a href="{% url 'recipe_detail' recipe.slug %}">{{ recipe.name }}</a></p>
-    <p>Time to cook: {{ recipe.time }}</p>
+<div class='recipe-card'>
+    
+    <h2><a href="{% url 'recipe_detail' recipe.slug %}">{{ recipe.name }}</a></h2>
+    
+    <p class='bold-text'>
+        Time to cook: 
+        <span style="font-weight: normal">{{ recipe.time }}</span>
+    </p>
+    
     <div>
-        <p>Ingredients:</p>
+        <p class='bold-text'>Ingredients:</p>
         {% for recipe_name, ingredients in ingredient_list.items %}
         {% if recipe_name == recipe.slug %}
             <ul>
@@ -20,12 +31,14 @@
         {% endif %}
         {% endfor %}
     </div>
+    
+    <p class='bold-text'>Directions:</p>
+    <p>{{ recipe.directions }}</p>
 
-    <p>Directions: {{ recipe.directions }}</p>
-    <a href="{% url 'recipe_update' recipe.slug %}">Edit</a>
-    <a href="{% url 'recipe_delete' recipe.slug %}">Delete</a>
-
-{% endfor %}
-
-
+    <div class='edit-delete-buttons'>
+        <a href="{% url 'recipe_update' recipe.slug %}">Edit</a>
+        <a href="{% url 'recipe_delete' recipe.slug %}">Delete</a>
+    </div>
+</div>
+    {% endfor %}
 {% endblock %}

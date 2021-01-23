@@ -1,10 +1,16 @@
 {% extends 'templates/base.html' %}
 {% block content %}
-<h1>Add your boss ass recipe!</h1>
-<form method='post'>
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Create Recipe">
-</form>
+
+
+<div class="title-box">
+    <h1>Add your boss ass recipe!</h1>
+</div>
+<div class="create-form">
+    <form method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Create Recipe">
+    </form>
+</div>
 
 {% endblock %}

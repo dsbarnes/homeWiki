@@ -10,11 +10,10 @@
 
 </head>
 <body>
-    {% include 'templates/main_nav.html' %}
-    {% block content %}
-    {% endblock %}
+    <aside> {% include 'templates/sidebar.html' %} </aside>
+    <main> {% block content %} {% endblock %} </main>
 
     <!-- Global JS -->
-    
+    <!-- If any... -->
 </body>
 </html>

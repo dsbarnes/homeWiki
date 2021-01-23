@@ -1,10 +1,16 @@
 {% extends 'templates/base.html' %}
 {% block content %}
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit">
-</form>
+
+<div class="title-box">
+    <h1>Make some changes to: {{ object.name }}</h1>
+</div>
+<div class="create-form">
+    <form method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Update Recipe">
+    </form>
+</div>
 
 {% endblock %}

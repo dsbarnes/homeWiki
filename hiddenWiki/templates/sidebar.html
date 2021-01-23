@@ -1,0 +1,23 @@
+<!-- Home button  -->
+<div class='sidebar'>
+<ul>
+    <li> <a class='nav_item' href="{% url 'hidden_wiki_home' %}">Home</a> </li>
+</ul>
+
+
+<!-- Auth buttons  -->
+<ul>
+    <li> <a class='nav_item' href="{% url 'logout' %}">Log out</a> </li>
+    <li> <a class='nav_item' href="{% url 'login' %}">Log in</a> </li>
+</ul>
+
+
+<!-- App(lets) buttons -->
+<ul>
+    <li><a href="{% url 'finance_list' %}">Finance</a></li>
+    <li><a href="{% url 'grocery_list' %}">Grocery</a></li>
+    <li><a href="{% url 'storage_instructions' %}">Storage</a></li>
+    <li><a href="{% url 'home_index' %}">Home Docs</a></li>
+    <li><a href="{% url 'recipe_list' %}">Recipes</a></li>
+</ul>
+</div>

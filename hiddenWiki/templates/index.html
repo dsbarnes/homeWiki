@@ -1,14 +1,51 @@
 {% extends 'templates/base.html' %}
 {% block content %}
 
-<h1>Welcome to the Barnes Hidden Wiki</h1>
+<div class='title-box'>
 
-<ul>
-    <li><a href="{% url 'finance_list' %}">Finance</a></li>
-    <li><a href="{% url 'grocery_list' %}">Grocery</a></li>
-    <li><a href="{% url 'storage_instructions' %}">Storage</a></li>
-    <li><a href="{% url 'home_index' %}">Home Docs</a></li>
-    <li><a href="{% url 'recipe_list' %}">Recipes</a></li>
-</ul>
+    <h1>805 ESF - Barnes Hidden Wiki</h1>
 
+    {% if user.is_anonymous %}
+        <p> Hello {{ user }}, </p>
+    {% else %}
+        <p>Welcome, back {{ user }}, </p>
+    {% endif %}
+</div>
+
+{% if user.is_anonymous %}
+<div class='card'>
+    <div>
+        <p> You'll need to log in for most things here. </p>
+        <p>
+            You can view and add recipes. <br>
+            Or see our grocery habbits if you'd like. <br>
+            Some homeDocs are avaliable but redacted. <br>
+            Otherwise you'll need Derek to creat a temp root user for you.
+        </p>
+
+    </div>
+</div>
+{% else %}
+<div class='card'>
+    <div>
+        <p>
+            If you would like to leave a note on the main page:
+            <a href="">click here</a>
+        </p>
+    </div>
+</div>
+<div class='card'>
+    <div>
+        <h2>Tasks in progress:</h2>
+        <ul>
+            <li>Address book</li>
+            <li>Resume templates</li>
+            <li>Package tracking / Notifications</li>
+            <li>Basic notifications for things like trash day</li>
+            <li>Shared calender</li>
+        </ul>
+    </div>
+</div>
+{% endif %}
+</div>
 {% endblock %}

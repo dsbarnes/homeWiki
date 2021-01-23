@@ -2,11 +2,74 @@
     box-sizing: border-box; 
     font-family: Arial, Helvetica, sans-serif;
 }
+.bold-text{
+    font-weight: bolder;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    background-color: slategrey;
+}
+
+aside, .title-box, .card, 
+.recipe-card, .recipe-detail-box{
+    background-color: whitesmoke;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+.sidebar{ width: 200px; height: 600px; }
+
+.sidebar a:link{ text-decoration: none; color: steelblue; }
+.sidebar a:visited{ color: steelblue; }
+.sidebar a:hover{ color: purple; }
+.sidebar a:active{ color: purple; }
+
+main{
+    width: 800px;
+}
 
 h1, h2{
     color: steelblue;
-    margin: 20px 0 0 20px;
+    margin: 20px;
+    padding: 10px;
 }
-.container{
-    margin-left: 20px;
+
+ul{
+    list-style: none;
 }
+
+p{
+    margin: 20px;
+    padding: 10px;
+}
+
+
+/* This all applies site wide */
+.create-form p {
+    display: flex;
+    flex-direction: column;
+ }
+ .create-form input[type=submit]{
+     margin: 30px;
+     height: 40px;
+     font-size: 24px;
+     background-color: whitesmoke;
+ }
+
+.edit-delete-buttons{ margin: 20px 20px 40px 20px; }
+.edit-delete-buttons a{ margin-right: 10px; } 
+
+
+/* We'll break this out into new files at some point */
+/* Stylesheet for RECIPES */
+.recipe-card p{
+    margin: 0 20px;
+    padding: 5px;
+}
+
+.recipe-card a:link{ color: steelblue; }
+.recipe-card a:visited{ color: steelblue; }
+.recipe-card a:hover{ color: purple; }
+
