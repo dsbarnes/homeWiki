@@ -15,7 +15,8 @@ body{
 aside, form, .title-box, .card, 
 .recipe-card, .recipe-detail-box,
 .storage-box,
-.finance-card, .finance-detail-box {
+.finance-card, .finance-detail-box,
+.grocery-card {
     background-color: whitesmoke;
     border: 1px solid black;
     margin: 20px;
@@ -97,4 +98,16 @@ form input[type=submit]{
     margin: 0 0 5px 30px;
     padding: 0px;
     width: 100px;
+}
+
+
+/*                            */
+/*    Styleshee for GROCERY   */
+/*                            */
+.grocery-card{
+    display: flex;
+    justify-content: space-between;
+}
+.grocery-card p{
+    width: 140px;
 }
