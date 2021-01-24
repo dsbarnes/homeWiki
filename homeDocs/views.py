@@ -27,7 +27,7 @@ class DocDetailView(LoginRequiredMixin, DetailView):
 class DocCreateView(LoginRequiredMixin, CreateView):
     model = HomeDocs
     template_name_suffix = '_create_form'
-    fields = ['name', 'img', 'details', 'doc_type']
+    fields = ['name', 'media', 'details', 'doc_type']
 
     def get_success_url(self):
         doc_type = self.request.POST.get('doc_type')
@@ -43,7 +43,7 @@ class DocCreateView(LoginRequiredMixin, CreateView):
 class DocUpdateView(LoginRequiredMixin, UpdateView):
     model = HomeDocs
     template_name_suffix = '_update_form'
-    fields = ['name', 'img', 'details', 'doc_type']
+    fields = ['name', 'media', 'details', 'doc_type']
 
     def get_success_url(self):
         doc_type = self.request.POST.get('doc_type')

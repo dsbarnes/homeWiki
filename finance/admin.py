@@ -3,7 +3,7 @@ from .models import Finance
 
 
 class FinanceAdmin(admin.ModelAdmin):
-    fields = ['name', 'amount', 'date', 'slug', 'finance_type']
+    fields = ['user', 'name', 'amount', 'date', 'slug', 'finance_type']
     prepopulated_fields = {'slug': ('name', )}
 
 # class IncomeAdmin(admin.ModelAdmin):

@@ -5,6 +5,10 @@
     <h1>Shows all finance</h1>
     <!-- we will want to select which finance we see ( income, debt, expense ) -->
     <p><a href="{% url 'finance_create' %}">Add Financial Information</a></p>
+    <p>
+        This should be the income for a single user? <br>
+        Or this should be for both Dustin and I to see?
+    </p>
 </div>
 
 <div class="finance-card">
@@ -47,7 +51,7 @@
     {% if expense.finance_type == 'E' %}
     <div>
         <p><a href="{% url 'finance_detail' expense.slug %}">{{ expense.name }}: </a></p>
-        <p>{{ expense.amount }}</p>
+        <p>${{ expense.amount }}</p>
         <p>{{ expense.date }}</p>
         <p> <a href="{% url 'finance_update' expense.slug %}">Updatde</a> </p>
         <p> <a href="{% url 'finance_delete' expense.slug %}">Delete</a> </p>

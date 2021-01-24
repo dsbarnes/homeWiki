@@ -83,11 +83,6 @@ form input[type=submit]{
     padding: 5px;
 }
 
-.recipe-card a:link{ color: steelblue; }
-.recipe-card a:visited{ color: steelblue; }
-.recipe-card a:hover{ color: purple; }
-
-
 /*                            */
 /*   Styleshee for FINANCE    */
 /*                            */
@@ -103,7 +98,6 @@ form input[type=submit]{
     width: 100px;
 }
 
-
 /*                            */
 /*    Styleshee for GROCERY   */
 /*                            */
@@ -115,11 +109,8 @@ form input[type=submit]{
     width: 140px;
 }
 
-
 /*                            */
 /*   Styleshee for HomeDocs   */
 /*                            */
-.inspection-card{
-
-}
-
+/*  */
+/* There is none... nice! */

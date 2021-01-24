@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.template.defaultfilters import slugify
 from datetime import datetime
@@ -5,6 +6,7 @@ from datetime import datetime
 
 class Finance(models.Model):
     name = models.CharField(max_length=255)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE) 
     amount = models.DecimalField(max_digits=8, decimal_places=2)
     date = models.DateField()
     slug = models.SlugField(unique=True, null=False)

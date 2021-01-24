@@ -5,7 +5,7 @@ from django.template.defaultfilters import slugify
 
 class HomeDocs(models.Model):
     name = models.CharField(max_length=255)
-    img = models.FileField()
+    media = models.FileField()
     details = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, null=False)
 

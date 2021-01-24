@@ -10,7 +10,7 @@ class DateInput(forms.DateInput):
 class FinanceForm(ModelForm):
     class Meta:
         model = Finance
-        fields = ['name', 'amount', 'date', 'finance_type']
+        fields = ['user', 'name', 'amount', 'date', 'finance_type']
 
         # The default form is input:text,
         # that is dumb af - it's a dateField
