@@ -4,6 +4,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Grocery
+from .forms import GroceryForm
 
 # Create your views here.
 class GroceryListView(LoginRequiredMixin, ListView):
@@ -16,13 +17,15 @@ class GroceryDetailView(LoginRequiredMixin, DetailView):
 class GroceryCreateView(LoginRequiredMixin, CreateView):
     model = Grocery
     template_name_suffix = '_create_form'
-    fields = ['name', 'quantity', 'cost', 'date']
+    # fields = ['item', 'name', 'quantity', 'cost', 'date']
+    form_class = GroceryForm
     def get_success_url(self):
         return reverse('grocery_list')
 
 class GroceryUpdateView(LoginRequiredMixin, UpdateView):
     model = Grocery
     template_name_suffix = '_update_form'
+    form_class = GroceryForm
     def get_success_url(self):
         return reverse('grocery_list')
 
